@@ -1,6 +1,6 @@
 package crit_thinking_1;
 
-import.java.util.Scanner;
+import java.util.Scanner;
 
 
 public class Manager extends Employee {

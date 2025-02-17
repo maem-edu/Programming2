@@ -23,7 +23,7 @@ public class Test {
         manager.setLastName(scnr);
         manager.setEmployeeID(scnr);
         manager.setSalary(scnr);
-        manager.setDepartment();
+        manager.setDepartment(scnr);
         manager.employeeSummary();
 
         scnr.close();
