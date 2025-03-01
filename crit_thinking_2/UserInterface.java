@@ -1,8 +1,7 @@
 package crit_thinking_2;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class UserInterface {
     public static void main(String[] args) {
@@ -21,18 +20,15 @@ public class UserInterface {
 
         appFrame.setVisible(true);
 
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String birthDate = JOptionPane.showInputDialog(appFrame, "Please enter your date of birth (MM-dd-yyyy):");
-                if (birthDate != null && !birthDate.trim().isEmpty()) {
-                    AgeCalc ageCalc = new AgeCalc();
-                    ageCalc.setBirthDate(birthDate);
-                    int age = ageCalc.calculateAge();
-                    ageLabel.setText("Your age is: " + age);
-                } else {
-                    JOptionPane.showMessageDialog(appFrame, "Invalid input. Please enter a valid date of birth.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
+        button.addActionListener((ActionEvent e) -> {
+            String birthDate = JOptionPane.showInputDialog(appFrame, "Please enter your date of birth (MM-dd-yyyy):");
+            if (birthDate != null && !birthDate.trim().isEmpty()) {
+                AgeCalc ageCalc = new AgeCalc();
+                ageCalc.setBirthDate(birthDate);
+                int age = ageCalc.calculateAge();
+                ageLabel.setText("Your age is: " + age);
+            } else {
+                JOptionPane.showMessageDialog(appFrame, "Invalid input. Please enter a valid date of birth.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
     }
